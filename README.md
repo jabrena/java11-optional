@@ -19,7 +19,27 @@ it is a way of simplifying such task:
     ```
     get(...).ifPresentOrElse(X::render, X::renderEmpty)
     ```
-* `public Optional<T> or(Supplier<? extends Optional<? extends T>> supplier)`
+* `public Optional<T> or(Supplier<? extends Optional<? extends T>> supplier)` - 
+it is a way of simplifying:
+    **assumptions**:
+    ```
+    Optional<Person> findByName(...)
+    Optional<Person> findById(...)
+    ```
+    then something like this:
+    ```
+    Optional<Person> person = 
+        Optional.ofNullable(
+            findByName(person.getName())
+            .orElseGet(() -> findById(person.getId())
+        ));
+    ```
+    could be rewritten just to:
+    ```
+    Optional<Person> person = 
+                findByName(person.getName())
+                .or(() -> findById(person.getId());
+    ```
 * `public Stream<T> stream()` - please refer my other github project:
 [java-converting-optionals-list](https://github.com/mtumilowicz/java-converting-optionals-list)
 
