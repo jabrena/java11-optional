@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-optional.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-optional)
+
 # java11-optional
 Java 9, 10, 11 Optional API news overview.
 
