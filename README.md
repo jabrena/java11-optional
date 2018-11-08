@@ -5,7 +5,20 @@ _Reference_: http://iteratrlearning.com/java9/2016/09/05/java9-optional.html
 
 # preface
 ## java 9
-* `public void ifPresentOrElse(Consumer<? super T> action, Runnable emptyAction)`
+* `public void ifPresentOrElse(Consumer<? super T> action, Runnable emptyAction)` -
+it is a way of simplifying such task:
+    ```
+    Optional<Person> person = get(...);
+    if (person.isPresent()) {
+        render(person.get());
+    } else {
+        renderEmpty();
+    }
+    ```
+    just to:
+    ```
+    get(...).ifPresentOrElse(X::render, X::renderEmpty)
+    ```
 * `public Optional<T> or(Supplier<? extends Optional<? extends T>> supplier)`
 * `public Stream<T> stream()` - please refer my other github project:
 [java-converting-optionals-list](https://github.com/mtumilowicz/java-converting-optionals-list)
