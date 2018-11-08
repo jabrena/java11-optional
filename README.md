@@ -1,6 +1,8 @@
 # java11-optional
 Java 9, 10, 11 Optional API news overview.
 
+_Reference_: http://iteratrlearning.com/java9/2016/09/05/java9-optional.html
+
 # preface
 ## java 9
 * public void ifPresentOrElse(Consumer<? super T> action, Runnable emptyAction)
