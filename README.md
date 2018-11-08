@@ -21,6 +21,7 @@ it is a way of simplifying such task:
     ```
 * `public Optional<T> or(Supplier<? extends Optional<? extends T>> supplier)` - 
 it is a way of simplifying:
+
     **assumptions**:
     ```
     Optional<Person> findByName(...)
